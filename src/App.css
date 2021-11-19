@@ -1,0 +1,41 @@
+img{
+  width: 100px;
+  height: 100px;
+}
+.slick-track{
+  margin: 20px 0;
+}
+.slick-slide{
+  margin-bottom: 10px;
+
+}
+.card{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h2{
+  margin-top: 50px;
+  text-align: center;
+}
+.contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+thead > tr {
+  text-align: left;
+  margin-bottom: 10px;
+}
+thead > *:first-child{
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  text-align: center;
+}
