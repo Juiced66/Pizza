@@ -1,6 +1,33 @@
+body{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: #fefefe;
+  background-color: black;
+  font-family: 'robotto';
+}
+h1{
+  float:right;
+  margin-right: 25px;
+  margin-top: 62px;
+}
+h2{
+  font-size: 1.5em;
+  margin: 0;
+}
+a{
+  all:initial;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
 img{
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
+}
+header > div> img{
+  margin-left: 10px;
+  margin-top: 10px;
 }
 .slick-track{
   margin: 20px 0;
@@ -11,17 +38,32 @@ img{
 }
 .card{
   width: 80%;
+  height: 350px;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background-color: #4b4848;
+  border-radius: 30px;
+  padding: 20px;
+  
+}
+.card > * {
+  padding: 2px;
+}
+.accroche{
+  font-size: 1.2rem;
+  text-decoration: underline;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 0.12ch;
 }
 
-h2{
-  margin-top: 50px;
+h1,h2{
   text-align: center;
+  color : #b7ac37;
 }
 .contact{
   display: flex;
@@ -29,6 +71,13 @@ h2{
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+}
+.contact > *{
+  padding: 5px;
+  font-size: 1.3em;
+}
+.contact > a:hover {
+  color:#b7ac37;
 }
 thead > tr {
   text-align: left;
@@ -38,4 +87,32 @@ thead > *:first-child{
   font-size: 1.4em;
   margin-bottom: 10px;
   text-align: center;
+}
+h4{
+  position: relative;
+  color : #b7ac37;
+}
+h4::before, h4::after{
+  content:"~";
+  position: absolute;
+ 
+}
+h4::after{
+  right:-5px
+}
+td{
+  padding: 5px 0;
+}
+h4::before{
+  left:-5px
+}
+table{
+  padding: 2rem;
+  margin: 0 auto;
+}
+.carte-ligne{
+  font-weight: 700;
+}
+th{
+  font-size: 1.3em;
 }

@@ -3,10 +3,9 @@ import React from 'react';
 const Contact = () => {
     return (
         <div className="contact">
-            <div>Nom Pizzeria</div>
-            <div>Téléphone</div>
-            <div>Adresse</div>
-            <div>Facebook</div>
+            <a href="tel:+33950464383">09 50 46 43 83</a>
+            <div>16 , Avenue Victor Hugo 66270 Le Soler</div>
+            <a href="https://www.facebook.com/PizzaPPLeSoler/">Retrouvez nous sur Facebook</a>
         </div>
     );
 }
