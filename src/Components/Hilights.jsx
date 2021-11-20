@@ -3,9 +3,10 @@ import Slider from "react-slick";
 import carte from "../appConfig/pizzas";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Pizza from "./Pizza";
+import PizzaHilight from "./Pizza";
 
 export default class SimpleSlider extends Component {
+  
   render() {
     const settings = {
       autoplay:true,
@@ -15,22 +16,32 @@ export default class SimpleSlider extends Component {
       slidesToScroll: 1,
       arrows: false
     };
+    const familles = carte.familles
+    
 
-    let categories = carte.categories;
+    let pizzaFamille =  familles.filter((famille) =>  famille.name === 'Pizzas')
+    pizzaFamille = pizzaFamille[0]
+    console.log(pizzaFamille.categories)
+    let hilightedPizzas = [] 
+    pizzaFamille.categories.map((category)=> {
+      let categoryHiligth = category.produits.filter((produit) => produit.hasOwnProperty('img'))
+      hilightedPizzas = [...hilightedPizzas, ...categoryHiligth ]
+      return
+    })
 
     return (
       <Slider {...settings}>
-        {categories.map((categorie) => {
-          return categorie.pizzas.map((pizza) => {
+        {hilightedPizzas.map((pizza) => {
             return (
-                <Pizza
+                <PizzaHilight
                   name={pizza.name}
-                  ingredients={pizza.ingredients}
-                  sizes={pizza.sizes}
+                  payload={pizza.payload}
+                  prices={pizza.prices}
                   img={pizza.img}
+                  colonnes={pizzaFamille.colonnes}
                 />
             );
-          });
+          ;
         })}
       </Slider>
     );

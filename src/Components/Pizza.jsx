@@ -1,17 +1,22 @@
 import React from "react";
 
-const Pizza = ({ img, name, ingredients, sizes}) => {
-    
+const PizzaHilight = ({ img, name, payload, prices, colonnes }) => {
+  const listIngredients = payload.join(", ");
+  console.log(colonnes)
   return (
     <div className="card">
       <div className="accroche">Pizza du moment : {name} </div>
       <img src={img} alt={name} />
-      <div className="ingredients">{ingredients.join(', ')}</div>
-        <div>{sizes.map((size) => (
-          <div>{size.name} : {size.price}€</div>
-        ))}</div>
+      <div className="ingredients">{listIngredients}</div>
+      <div>
+        {prices.map((price, i) => (
+          <div>
+            {colonnes[i]} : {price} €
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default Pizza;
+export default PizzaHilight;

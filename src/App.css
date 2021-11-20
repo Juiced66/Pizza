@@ -108,6 +108,7 @@ h4::before{
 }
 table{
   padding: 2rem;
+  width: 90%;
   margin: 0 auto;
 }
 .carte-ligne{

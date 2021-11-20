@@ -7,7 +7,7 @@ const Header = () => {
       <header>
         <div>
           <img src={logo} alt="" />
-          <h1>P&P Pizza</h1>
+          <h1>Pizza P&P </h1>
         </div>
       </header>
     </>
