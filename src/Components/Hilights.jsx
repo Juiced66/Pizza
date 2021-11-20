@@ -24,7 +24,7 @@ export default class SimpleSlider extends Component {
     console.log(pizzaFamille.categories)
     let hilightedPizzas = [] 
     pizzaFamille.categories.map((category)=> {
-      let categoryHiligth = category.produits.filter((produit) => produit.hasOwnProperty('img'))
+      const categoryHiligth = category.produits.filter((produit) => produit.hasOwnProperty('img'))
       hilightedPizzas = [...hilightedPizzas, ...categoryHiligth ]
       return
     })

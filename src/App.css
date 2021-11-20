@@ -38,7 +38,7 @@ header > div> img{
 }
 .card{
   width: 80%;
-  height: 350px;
+  height: 275px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -48,7 +48,6 @@ header > div> img{
   background-color: #4b4848;
   border-radius: 30px;
   padding: 20px;
-  
 }
 .card > * {
   padding: 2px;

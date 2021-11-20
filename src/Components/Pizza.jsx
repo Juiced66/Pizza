@@ -11,7 +11,7 @@ const PizzaHilight = ({ img, name, payload, prices, colonnes }) => {
       <div>
         {prices.map((price, i) => (
           <div>
-            {colonnes[i]} : {price} €
+            {colonnes[i + 1 ]} : {price} €
           </div>
         ))}
       </div>
