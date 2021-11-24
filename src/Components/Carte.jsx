@@ -32,10 +32,11 @@ const THead = ({ colonnes, categorie }) => {
     <thead>
       <tr>
         <th colSpan="3">
-          <h4>{categorie.name}</h4>
+         {categorie.name !== "_" && <h4>{categorie.name}</h4>}
         </th>
       </tr>
       <tr>
+        {console.log(colonnes)}
         {colonnes.map((colonne, i) => {
           return i === 0 ? <th key={colonne + i}>{colonne}</th> : <th className="tarif" key={colonne + i}>{colonne}</th>;
         })}
@@ -46,18 +47,18 @@ const THead = ({ colonnes, categorie }) => {
 
 const Carte = ({carte}) => {
 
-  const famillesProduits = carte.familles;
+  
 
-  return famillesProduits.map((famille) => {
+  return carte.map((famille) => {
     return (
       <div key={"famille" + famille.name}>
         <h2>Nos {famille.name}</h2>
         {famille.categories.map((categorie) => {
           return (
             <table key={"table" + categorie.name}>
-              <THead colonnes={famille.colonnes} categorie={categorie} />
+              <THead colonnes={famille.columns} categorie={categorie} />
               <tbody>
-              {categorie.produits.map((produit, i) => {
+              {categorie.products.map((produit, i) => {
                 return (
                   <LigneCarte
                     key={produit.name + i}
