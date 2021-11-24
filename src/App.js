@@ -32,7 +32,7 @@ function App() {
       {}
       <Header />
       <Contact />
-      <SimpleSlider />
+      <SimpleSlider carte={menu} />
       <Carte
         carte={menu}
       />

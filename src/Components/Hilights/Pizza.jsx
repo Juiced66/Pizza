@@ -2,17 +2,20 @@ import React from "react";
 
 const PizzaHilight = ({ img, name, payload, prices, colonnes }) => {
   const listIngredients = payload.join(", ");
+  console.log(prices, 'prices')
+  console.log(colonnes, 'colonnes')
   return (
     <div className="card" key={name}>
       <div className="accroche">Gros plan : {name} </div>
       <img src={img} alt={name} />
       <div className="ingredients">{listIngredients}</div>
       <div>
-        {prices.map((price, i) => (
+        {prices.map((price, i) => {
+          return(
           <div key={price}>
             {colonnes[i + 1]} : {price} €
           </div>
-        ))}
+        )})}
       </div>
     </div>
   );

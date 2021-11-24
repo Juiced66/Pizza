@@ -4,7 +4,6 @@ const Family = require('./models/Family.model')
 const Product = require('./models/Product.model')
 const Category = require('./models/Category.model')
 const Menu = require('./models/Menu.model')
-const { isElementOfType } = require("react-dom/test-utils")
 
 async function getCategoryProducts(categoryId){
 	const res = await Product.find({_category : categoryId})

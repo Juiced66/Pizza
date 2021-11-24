@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import carte from "../../appConfig/pizzas";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import PizzaHilight from "./Pizza";
 
 export default class SimpleSlider extends Component {
-  
+
   render() {
     const settings = {
       autoplay:true,
@@ -25,16 +24,18 @@ export default class SimpleSlider extends Component {
         },
       ]
     };
-    const familles = carte.familles
+    const familles = this.props.carte
+    console.log(familles)
     
-
-    let pizzaFamille =  familles.filter((famille) =>  famille.name === 'Pizzas')
-    pizzaFamille = pizzaFamille[0]
+    
+    /** Only pizzas are Hiligthed for now **/
+    let pizzaFamille =  familles.filter(({name}) =>  name === 'Pizzas')
+    console.log(pizzaFamille)
     
     let hilightedPizzas = []
 
-    pizzaFamille.categories.forEach(((category)=> {
-      const categoryHiligth = category.produits.filter((produit) => produit.hasOwnProperty('img'))
+    pizzaFamille[0].categories.forEach(((category)=> {
+      const categoryHiligth = category.products.filter((produit) => produit.hasOwnProperty('img'))
       hilightedPizzas = [...hilightedPizzas, ...categoryHiligth ]
       
     }))
@@ -49,7 +50,7 @@ export default class SimpleSlider extends Component {
                   payload={pizza.payload}
                   prices={pizza.prices}
                   img={pizza.img}
-                  colonnes={pizzaFamille.colonnes}
+                  colonnes={pizzaFamille[0].columns}
                 />
             );
           ;
