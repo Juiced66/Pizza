@@ -1,21 +1,26 @@
 import React from "react";
 
 const LigneCarte = ({ name, prices, payload , color }) => {
-  const listIngredients = payload.join(', ')
+  const toDisplay = payload.join(', ')
   return (
     <>
       <tr>
         <td className="carte-ligne" style={{ color: color }}>
           {name}
         </td>
-        {prices.map((price) => {
+        {prices.map((price,i) => {
+            if(prices.length === 1 && i === 2 ){
+              return (
+                <td key={price + i} style={{ color: color, textAlign:"right" }}>{price + " €"}</td>
+              )
+            }
             return (
-              <td style={{ color: color }}>{price + " €"}</td>
+              <td key={price + i} style={{ color: color }}>{price + " €"}</td>
             )
         })}
       </tr>
       <tr colSpan="3">
-        <td style={{ color: color }}>{listIngredients}</td>
+        <td style={{ color: color }}>{toDisplay}</td>
       </tr>
     </>
   );
@@ -32,7 +37,7 @@ const THead = ({ colonnes, categorie }) => {
       </tr>
       <tr>
         {colonnes.map((colonne, i) => {
-          return <th key={colonne}>{colonne}</th>;
+          return i === 0 ? <th key={colonne + i}>{colonne}</th> : <th className="tarif" key={colonne + i}>{colonne}</th>;
         })}
       </tr>
     </thead>
@@ -40,21 +45,22 @@ const THead = ({ colonnes, categorie }) => {
 };
 
 const Carte = ({carte}) => {
+
   const famillesProduits = carte.familles;
 
   return famillesProduits.map((famille) => {
     return (
-      <div>
+      <div key={"famille" + famille.name}>
         <h2>Nos {famille.name}</h2>
         {famille.categories.map((categorie) => {
-          console.log(famille)
           return (
-            <table>
+            <table key={"table" + categorie.name}>
               <THead colonnes={famille.colonnes} categorie={categorie} />
               <tbody>
               {categorie.produits.map((produit, i) => {
                 return (
                   <LigneCarte
+                    key={produit.name + i}
                     name={produit.name}
                     prices={produit.prices}
                     payload={produit.payload}

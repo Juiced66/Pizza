@@ -1,42 +1,40 @@
-body{
+body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   color: #fefefe;
   background-color: black;
-  font-family: 'robotto';
+  font-family: "Roboto", sans-serif;
 }
-h1{
-  float:right;
-  margin-right: 25px;
-  margin-top: 62px;
+header {
+  display: flex;
+  justify-content: space-evenly;
 }
-h2{
+h2 {
   font-size: 1.5em;
   margin: 0;
 }
-a{
-  all:initial;
+a {
+  all: initial;
   color: inherit;
   cursor: pointer;
   text-decoration: underline;
 }
-img{
+img {
   width: 150px;
   height: 150px;
 }
-header > div> img{
+header > div > img {
   margin-left: 10px;
   margin-top: 10px;
 }
-.slick-track{
+.slick-track {
   margin: 20px 0;
 }
-.slick-slide{
+.slick-slide {
   margin-bottom: 10px;
-
 }
-.card{
+.card {
   width: 80%;
   height: 275px;
   margin: 0 auto;
@@ -52,7 +50,7 @@ header > div> img{
 .card > * {
   padding: 2px;
 }
-.accroche{
+.accroche {
   font-size: 1.2rem;
   text-decoration: underline;
   font-weight: 700;
@@ -60,59 +58,81 @@ header > div> img{
   letter-spacing: 0.12ch;
 }
 
-h1,h2{
+h1,
+h2 {
   text-align: center;
-  color : #b7ac37;
+  color: #b7ac37;
 }
-.contact{
+.contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
 }
-.contact > *{
+.contact > * {
   padding: 5px;
   font-size: 1.3em;
 }
 .contact > a:hover {
-  color:#b7ac37;
+  color: #b7ac37;
 }
 thead > tr {
   text-align: left;
   margin-bottom: 10px;
 }
-thead > *:first-child{
+thead > *:first-child {
   font-size: 1.4em;
   margin-bottom: 10px;
   text-align: center;
 }
-h4{
+h4 {
   position: relative;
-  color : #b7ac37;
+  color: #b7ac37;
 }
-h4::before, h4::after{
-  content:"~";
+h4::before,
+h4::after {
+  content: "~";
   position: absolute;
- 
 }
-h4::after{
-  right:-5px
+h4::after {
+  right: -5px;
 }
-td{
+td {
   padding: 5px 0;
 }
-h4::before{
-  left:-5px
+h4::before {
+  left: -5px;
 }
-table{
+table {
   padding: 2rem;
   width: 90%;
   margin: 0 auto;
 }
-.carte-ligne{
+.carte-ligne {
   font-weight: 700;
 }
-th{
+th {
   font-size: 1.3em;
+}
+.tarif {
+  width: 60px;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 340px;
+    height: 310px;
+  }
+}
+@media (min-width: 1024px) {
+  .card {
+    width: 80%;
+    height: 310px;
+  }
+  #root{
+    width: 80%;
+    margin:0 auto;
+  }
 }

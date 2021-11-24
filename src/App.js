@@ -4,7 +4,7 @@ import Contact from './Components/Contact';
 import Header from './Components/Header';
 import Carte from './Components/Carte';
 import carte from './appConfig/pizzas'
-import SimpleSlider from './Components/Hilights';
+import SimpleSlider from './Components/Hilights/Hilights';
 
 
 function App() {

@@ -17,6 +17,12 @@ const carte = {
               img: quatreFromages,
             },
             {
+              name: "4 Fromages",
+              payload: ["tomate", "bleu", "chevre", "roquefort", "olives"],
+              prices: [9, 10.5],
+              img: quatreFromages,
+            },
+            {
               name: "Margarita",
               payload: ["tomate", "mozzarella", "basilic", "olives"],
               prices: [7, 8.5],

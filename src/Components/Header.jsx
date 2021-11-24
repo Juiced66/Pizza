@@ -5,10 +5,8 @@ const Header = () => {
   return (
     <>
       <header>
-        <div>
-          <img src={logo} alt="" />
-          <h1>Pizza P&P </h1>
-        </div>
+        <img src={logo} alt="" />
+        <h1>Pizza P&P </h1>
       </header>
     </>
   );
