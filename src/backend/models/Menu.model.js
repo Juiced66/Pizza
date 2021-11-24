@@ -2,18 +2,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 let menuSchema = new Schema({
-    name: {
-        type : String,
-        required : true
-    },
     families: {
-        type : [mongoose.SchemaType.ObjectId],
+        type : [mongoose.Schema.Types.ObjectId],
         ref:'Family',
         required: true
-    },
-    columns: {
-        type: [String],
-        required : true
     },
 })
 

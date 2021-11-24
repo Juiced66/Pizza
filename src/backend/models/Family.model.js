@@ -7,7 +7,7 @@ let familySchema = new Schema({
         required : true
     },
     categories: {
-        type : [mongoose.SchemaType.ObjectId],
+        type : [mongoose.Schema.Types.ObjectId],
         ref:'Category',
         required : true
     },

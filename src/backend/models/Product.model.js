@@ -11,14 +11,13 @@ let ProductSchema = new Schema({
     required: true,
   },
   prices: {
-    type: [Float32Array],
+    type: [Number],
     required: true,
   },
   img: String,
-  category_id: {
-    type: mongoose.SchemaType.ObjectId,
-    ref: "Category",
-    required: true,
+  _category: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Category",  
   },
 });
 
