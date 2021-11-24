@@ -2,13 +2,16 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  color: #fefefe;
+  color: #eeeeee;
   background-color: black;
   font-family: "Roboto", sans-serif;
 }
 header {
   display: flex;
   justify-content: space-evenly;
+}
+h1{
+  align-self: center;
 }
 h2 {
   font-size: 1.5em;
@@ -24,10 +27,7 @@ img {
   width: 150px;
   height: 150px;
 }
-header > div > img {
-  margin-left: 10px;
-  margin-top: 10px;
-}
+
 .slick-track {
   margin: 20px 0;
 }
@@ -125,14 +125,25 @@ th {
     width: 340px;
     height: 310px;
   }
+  .tarif{
+    width: 80px;
+  }
 }
 @media (min-width: 1024px) {
+  img{
+    width: 180px;
+    height: 180px;
+  }
   .card {
     width: 80%;
     height: 310px;
   }
-  #root{
+  header{
+    justify-content: space-between ;
+  }
+  #root {
     width: 80%;
-    margin:0 auto;
+    font-size: 1.2em;
+    margin: 0 auto;
   }
 }
