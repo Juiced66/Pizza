@@ -54,8 +54,8 @@ exports.findProd = (req, res)=>{
 
     }else{
         ProductDb.find()
-            .then(product => {
-                res.send(product)
+            .then(products => {
+                res.send(products)
             })
             .catch(err => {
                 res.status(500).send({ message : err.message || "Error Occurred while retriving product information" })
@@ -157,9 +157,9 @@ exports.findCat = (req, res)=>{
             })
 
     }else{
-        CategoryDb.find()
-            .then(product => {
-                res.send(product)
+        CategoryDb.find().populate({path :'products'})
+            .then(categories => {
+                res.send(categories)
             })
             .catch(err => {
                 res.status(500).send({ message : err.message || "Error Occurred while retriving category information" })
@@ -242,7 +242,7 @@ exports.createFam = (req,res)=>{
 
 }
 
-// retrieve and return all products/ retrive and return a single product
+// retrieve and return all families/ retrive and return a single family
 exports.findFam = (req, res)=>{
 
     if(req.query.id){
@@ -261,9 +261,9 @@ exports.findFam = (req, res)=>{
             })
 
     }else{
-        FamilyDb.find()
-            .then(product => {
-                res.send(product)
+        FamilyDb.find().populate({path :'categories', populate : {path : 'products', options:{ sort: [ {"prices": "asc"}  ] }}})
+            .then(families => {
+                res.send(families)
             })
             .catch(err => {
                 res.status(500).send({ message : err.message || "Error Occurred while retriving family information" })

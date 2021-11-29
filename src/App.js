@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     async function getMenu(){
       try {
-        const response = await fetch('/menu')
+        const response = await fetch('/api/families')
         const json = await response.json()
         console.log(json)
         setMenu(json)
