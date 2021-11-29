@@ -2,8 +2,7 @@ import React from "react";
 
 const PizzaHilight = ({ img, name, payload, prices, colonnes }) => {
   const listIngredients = payload.join(", ");
-  console.log(prices, 'prices')
-  console.log(colonnes, 'colonnes')
+  console.log(img)
   return (
     <div className="card" key={name}>
       <div className="accroche">Gros plan : {name} </div>

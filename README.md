@@ -1,3 +1,11 @@
+TODO : 
+- CRUD pour pouvoir faire une interface d'administration (urgent) (read deja ok)
+- Router pour l'authentification (urgent)
+- Vue de l'interface d'administration
+- conversion d'images en b64
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -18,8 +18,8 @@ async function getFamilyCategories(family_id){
 async function setMenuForVue(){
 
 	const res = await Family
-		.find().populate({path :'categories', populate : 'products'})
-
+		.find().populate({path :'categories', populate : {path : 'products', options:{ sort: [ {"prices": "asc"}  ] }}})
+	console.log(res)
 	return res
 }
 

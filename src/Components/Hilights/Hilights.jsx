@@ -43,6 +43,7 @@ export default class SimpleSlider extends Component {
     return (
       <Slider {...settings}>
         {hilightedPizzas.map((pizza) => {
+          console.log(pizza)
             return (
                 <PizzaHilight
                   key={pizza.name}

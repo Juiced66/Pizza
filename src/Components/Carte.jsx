@@ -15,7 +15,7 @@ const LigneCarte = ({ name, prices, payload , color }) => {
               )
             }
             return (
-              <td key={price + i} style={{ color: color }}>{price + " €"}</td>
+              <td key={price + i} style={{ color: color }}>{price !== null && (price + " €")}</td>
             )
         })}
       </tr>

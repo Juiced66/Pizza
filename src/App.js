@@ -5,6 +5,7 @@ import Carte from "./Components/Carte";
 // import carte from './appConfig/pizzas'
 import SimpleSlider from "./Components/Hilights/Hilights";
 import { useEffect, useState } from "react";
+import Admin from "./backend/CMS/Admin";
 
 
 
@@ -36,6 +37,7 @@ function App() {
       <Carte
         carte={menu}
       />
+      <Admin carte={menu} />
     </div>
   );
 }

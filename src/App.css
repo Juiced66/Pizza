@@ -57,11 +57,11 @@ img {
   font-style: italic;
   letter-spacing: 0.12ch;
 }
-
 h1,
 h2 {
   text-align: center;
   color: #b7ac37;
+  font-size: 2em;
 }
 .contact {
   display: flex;
@@ -112,9 +112,7 @@ table {
 .carte-ligne {
   font-weight: 700;
 }
-th {
-  font-size: 1.3em;
-}
+
 .tarif {
   width: 60px;
   font-weight: 700;
@@ -146,4 +144,7 @@ th {
     font-size: 1.2em;
     margin: 0 auto;
   }
+}
+li{
+  margin-bottom: 10px ;
 }
