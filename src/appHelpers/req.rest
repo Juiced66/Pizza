@@ -1,0 +1,15 @@
+
+# API GET MENU
+GET http://Localhost:5000/api/families HTTP/1.1
+###
+#API CREATE PRODUCT
+POST  http://Localhost:5000/api/products HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Cabrita",
+    "_category":"619e10c7e364f93c6b03cfb6",
+    "prices":["9.5","11.5"],
+    "payload":["Crème" , "Emmental", "Mozzarella", "Chèvre" , "Miel", "Noix", "Olives"]
+}
+###

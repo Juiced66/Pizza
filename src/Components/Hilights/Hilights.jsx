@@ -25,12 +25,12 @@ export default class SimpleSlider extends Component {
       ]
     };
     const familles = this.props.carte
-    console.log(familles)
+
     
     
     /** Only pizzas are Hiligthed for now **/
     let pizzaFamille =  familles.filter(({name}) =>  name === 'Pizzas')
-    console.log(pizzaFamille)
+
     
     let hilightedPizzas = []
 
@@ -43,7 +43,7 @@ export default class SimpleSlider extends Component {
     return (
       <Slider {...settings}>
         {hilightedPizzas.map((pizza) => {
-          console.log(pizza)
+
             return (
                 <PizzaHilight
                   key={pizza.name}

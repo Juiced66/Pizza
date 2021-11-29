@@ -18,7 +18,7 @@ function App() {
       try {
         const response = await fetch('/api/families')
         const json = await response.json()
-        console.log(json)
+        // console.log(json)
         setMenu(json)
       } catch (error) {
         console.log(error)

@@ -11,20 +11,28 @@ exports.createProd = (req,res)=>{
     }
 
     // new product
-    const product = new Product({
+    const product = new ProductDb({
         name : req.body.name,
         payload : req.body.payload,
-        family_id: req.body.family_id,
         img : req.body.img,
-        _category : req.body._category
+        _category : req.body._category,
+        prices : req.body.prices
     })
 
     // save product in the database
     product
         .save(product)
         .then(data => {
-            //res.send(data)
-            res.redirect('/add-product');
+            //Add product to categories products
+            const idProduct = data._id
+            const idCat = data._category
+
+            CategoryDb.findByIdAndUpdate(idCat, {$push:{ products : idProduct}},{},(err,data)=>{
+                console.log(data)
+            })
+            
+           
+            return res.redirect('/add-product');
         })
         .catch(err =>{
             res.status(500).send({
