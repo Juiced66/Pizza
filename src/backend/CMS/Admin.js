@@ -5,10 +5,17 @@
 
 import React from "react";
 import CategoryList from "./Category/CategoryList";
+import Login from "../../Components/Login"
+import { getCookie } from "../Utils/getCookie";
 
-const Admin = ({ carte }) => {
-    
-    
+
+const Admin = ({ carte, setToken, token }) => {
+  const cookieToken = getCookie('token')
+  console.log(cookieToken)
+
+  if(!token) {
+    return <Login setToken={setToken}  />
+  }
   
     return (
     <div>

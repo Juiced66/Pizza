@@ -7,13 +7,18 @@
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-async-handler": "^1.2.0",
     "immer": ">=9.0.6",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.13",
     "nth-check": ">=2.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router": "^6.0.2",
+    "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1",
@@ -45,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "cors": "^2.8.5",
     "nodemon": "^2.0.15"
   }
 }

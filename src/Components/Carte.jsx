@@ -27,7 +27,7 @@ const LigneCarte = ({ name, prices, payload , color }) => {
 };
 
 const THead = ({ colonnes, categorie }) => {
-  console.log(colonnes)
+
   return (
     <thead>
       <tr>
@@ -36,7 +36,6 @@ const THead = ({ colonnes, categorie }) => {
         </th>
       </tr>
       <tr>
-        {console.log(colonnes)}
         {colonnes.map((colonne, i) => {
           return i === 0 ? <th key={colonne + i}>{colonne}</th> : <th className="tarif" key={colonne + i}>{colonne}</th>;
         })}
