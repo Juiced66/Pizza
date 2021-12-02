@@ -18,7 +18,7 @@ async function loginUser(credentials) {
 
 
 function Login() {
-
+  
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [token, setToken] = useState("");
@@ -31,6 +31,7 @@ function Login() {
       password
     });
     await setToken(user.token);
+    
     localStorage.setItem("token", user.token)
     history('/admin')
   }

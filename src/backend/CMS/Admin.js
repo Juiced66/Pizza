@@ -3,19 +3,33 @@
  * Root of CMS app
  */
 
-import React from "react";
+import React, { useEffect} from "react";
 import CategoryList from "./Category/CategoryList";
 import Login from "../../Components/Login"
-import { getCookie } from "../Utils/getCookie";
+import { verifyToken } from "../Utils/verifyToken";
+import { useNavigate } from "react-router";
 
 
-const Admin = ({ carte, setToken, token }) => {
-  const cookieToken = getCookie('token')
-  console.log(cookieToken)
 
-  if(!token) {
-    return <Login setToken={setToken}  />
-  }
+
+
+const Admin = ({ carte }) => {
+  const navigate = useNavigate()
+  const token = localStorage.getItem('token')
+
+  useEffect(() => {
+    try {
+      verifyToken(token)
+    }catch(err){
+      localStorage.removeItem('token')
+      navigate('/login')
+    }
+    
+  }, []);
+
+
+
+
   
     return (
     <div>

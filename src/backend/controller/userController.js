@@ -30,17 +30,13 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
-
+  
   const user = await User.findOne({ email });
 
   if (user && (await user.matchPassword(password))) {
     console.log('user ok')
 
     const token = generateToken(user._id)
-    console.log(token)
-    // setting token to cookie
-    res.cookie("token", token, { maxAge: 300 * 1000, secure:true, sameSite: 'none' })
-    
     
     res.json({
       _id: user._id,
